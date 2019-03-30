@@ -6,11 +6,10 @@
 
 (ns leiningen.gorilla
   (:require [gorilla-repl.core :as g]
-            [leiningen.core.eval :as eval]
-            [clojure.pprint :as pp]))
+            [leiningen.core.eval :as eval]))
 
 ;; The version of Gorilla that we will use
-(def gorilla-version "0.5.3")
+(def gorilla-version "0.6.0")
 
 ;; This is the leiningen task. It needs no arguments, and can run outside a project (assuming you've got the plugin
 ;; installed in your profile).
