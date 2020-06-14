@@ -9,7 +9,7 @@
             [leiningen.core.eval :as eval]))
 
 ;; The version of Gorilla that we will use
-(def gorilla-version "0.6.0")
+(def gorilla-version "0.7.0")
 
 ;; This is the leiningen task. It needs no arguments, and can run outside a project (assuming you've got the plugin
 ;; installed in your profile).
@@ -26,11 +26,11 @@
         project-name (:name project)
         gorilla-options (:gorilla-options project)]
     (eval/eval-in-project
-      prj
-      `(g/run-gorilla-server {:port ~port
-                              :ip ~ip
-                              :nrepl-port ~nrepl-port
-                              :version ~gorilla-version
-                              :project ~project-name
-                              :gorilla-options ~gorilla-options})
-      '(require 'gorilla-repl.core))))
+     prj
+     `(g/run-gorilla-server {:port ~port
+                             :ip ~ip
+                             :nrepl-port ~nrepl-port
+                             :version ~gorilla-version
+                             :project ~project-name
+                             :gorilla-options ~gorilla-options})
+     '(require 'gorilla-repl.core))))
